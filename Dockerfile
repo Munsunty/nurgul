@@ -1,5 +1,5 @@
 # see https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG NODE_VERSION=node:16.14.2
+ARG NODE_VERSION=node:18.16.0
 
 FROM $NODE_VERSION AS dependency-base
 
@@ -10,14 +10,14 @@ WORKDIR /app
 # copy the app, note .dockerignore
 COPY package.json .
 COPY package-lock.json .
-RUN npm ci
+RUN yarn install
 
 FROM dependency-base AS production-base
 
 # build will also take care of building
 # if necessary
 COPY . .
-RUN npm run build
+RUN yarn build
 
 FROM $NODE_VERSION-slim AS production
 
