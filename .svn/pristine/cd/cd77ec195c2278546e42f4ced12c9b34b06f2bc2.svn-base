@@ -1,0 +1,490 @@
+<template>
+  <div id="topArea">
+    <Menubar :model="menubarItems" style="height:100%">
+      <template #start>
+        <i class="pi pi-globe"></i>
+      </template>
+      <template #end>
+        <i class="pi pi-send" />
+        <i class="pi pi-user" />
+        <span>CoreQ</span>
+        <i class="pi pi-sign-out" />
+      </template>
+    </Menubar>
+  </div>
+  <div id="Container" >
+
+    <component :is="currentTabComponent" fromPage="basic" />
+
+    <div class="dock-window dock-advanced" v-show="switch1">
+      <Dock :model="dockItems" :focus="dockFocus()" menu-id="mainDock">
+        <template #item="{ item }" >
+          <a href="#" class="p-dock-link" :class="item.class" v-tooltip.top="item.label" @click="onDockItemClick($event, item )">
+            <img :alt="item.label" :src="item.icon" style="width: 100%" />
+          </a>
+        </template>
+      </Dock>
+    </div>
+  </div>
+  <div id="Footer" >
+    <Menubar :model="bottomMenuBar" style="height:100%">
+      <template #start>
+        <Button class="preview p-0" aria-label="preview" @click="switch1=!switch1">
+          <i class="pi pi-window-minimize px-2"  v-if="switch1" />
+          <i class="pi pi-window-maximize px-2"  v-else />
+          <span class="px-3">미리보기</span>
+        </Button>
+        <!--        <Button class="preview p-0" aria-label="preview" @click="changeContainerComponet">-->
+        <!--          <span class="px-3">hello</span>-->
+        <!--        </Button>-->
+      </template>
+      <template #end>
+        <bottom-bar-right-side>
+        </bottom-bar-right-side>
+
+      </template>
+    </Menubar>
+  </div>
+</template>
+
+<script setup>
+import {managementViewKey as mvk} from "./composables/managementViewKey";
+const managementViewKey = new mvk();
+
+let defaultStartView=(index,selected)=>({
+  label: '시작화면',
+  icon: "/_nuxt/assets/technology-6701504_640.jpg",
+  command: ()=>{
+    managementViewKey.editView(managementViewKey.currentKey,
+        {
+          page:'startView'
+        });
+    viewList.value[index-1]=viewResolveList['newStartView'];
+
+  },
+  key:index,
+  class:selected?'p-dock-item-current':''
+});
+
+const resolveList = (arr) => {
+  let list = {};
+
+  function getR(comp) {
+    list[comp] = h(resolveComponent(comp));
+  }
+  arr.data.value.dataList.forEach(data=>{
+    getR(data);
+  })
+  return list
+}
+
+const viewResolveList = resolveList(await useFetch(() => `/api/menu/menuList`, {params: {}}))
+
+const viewList = ref([viewResolveList['newStartView']])
+const cnt = ref(0);
+
+const currentTabComponent= computed({
+  get: ()=>{
+
+    return viewList.value[cnt.value];
+  },
+  set: (value)=>{
+
+  }
+
+});
+
+
+const switch1 = ref(false);
+
+const menubarItems = ref([
+      {
+        label: 'CoreQ⁺',
+        class: 'menubar-root',
+        command:()=>{
+          managementViewKey.editView(managementViewKey.currentKey,
+              {
+                page:'startView'
+              });
+          viewList.value[cnt.value]=viewResolveList['newStartView'];
+          dockItems.value[cnt.value+1]=defaultStartView(dockItems.value[cnt.value+1].key,true);
+        }
+      },
+      {
+        label: '파트',
+        items: [
+          {
+            label: '검색',
+            icon: 'pi pi-fw pi-search',
+            command:()=>{
+              managementViewKey.editView(managementViewKey.currentKey,
+                  {
+                page:'partSearch'
+              });
+
+              let tempCnt = cnt.value;
+
+              viewList.value[tempCnt]=viewResolveList['partSearchLayout'];
+
+              dockItems.value[tempCnt+1]={
+                label: 'search',
+                icon: "/_nuxt/assets/ice-34075.svg",
+                command: () => {
+                  cnt.value=tempCnt;
+                },
+                key:tempCnt+1,
+                class:dockItems.value[tempCnt+1].class
+
+              }
+
+            }
+          },
+          {
+            label: 'BOM',
+            icon: 'pi pi-fw pi-sitemap',
+            items:[
+              {
+                label: '보기',
+                command:()=>{
+                  managementViewKey.editView(managementViewKey.currentKey,
+                      {
+                        page:'partSearch'
+                      });
+
+                  let tempCnt = cnt.value;
+
+                  viewList.value[tempCnt]=viewResolveList['tableView'];
+
+                  dockItems.value[tempCnt+1]={
+                    label: 'BOM 보기',
+                    icon: "/_nuxt/assets/ice-34075.svg",
+                    command: () => {
+                      cnt.value=tempCnt;
+
+                    },
+                    key:tempCnt+1,
+                    class:dockItems.value[tempCnt+1].class
+                  }
+                }
+              },{
+                label: '수정',
+                command:()=>{
+                  managementViewKey.editView(managementViewKey.currentKey,
+                      {
+                        page:'bom_Edit'
+                      });
+
+                  let tempCnt = cnt.value;
+
+                  viewList.value[tempCnt]=viewResolveList['containorLayout1'];
+
+                  dockItems.value[tempCnt+1]={
+                    label: 'BOM 수정',
+                    icon: "/_nuxt/assets/ice-34075.svg",
+                    command: () => {
+                      cnt.value=tempCnt;
+                    },
+                    key:tempCnt+1,
+                    class:dockItems.value[tempCnt+1].class
+                  }
+                }
+              }
+            ]
+          },
+          {
+            separator: true
+          },
+          {
+            label: 'orgChart',
+            icon: 'pi pi-fw pi-external-link',
+            command:()=>{
+              managementViewKey.editView(managementViewKey.currentKey,
+                  {
+                    page:'org'
+                  });
+
+              let tempCnt = cnt.value;
+
+              viewList.value[tempCnt]=viewResolveList['bomOrgChart'];
+
+              dockItems.value[tempCnt+1]={
+                label: 'org',
+                icon: "/_nuxt/assets/ice-34075.svg",
+                command: () => {
+                  cnt.value=tempCnt;
+                },
+                key:tempCnt+1,
+                class:dockItems.value[tempCnt+1].class
+              }
+            }
+          }
+        ]
+      },
+      {
+        label: '도면',
+        items: [
+          {
+            label: 'Left',
+            icon: 'pi pi-fw pi-align-left'
+          },
+          {
+            label: 'Right',
+            icon: 'pi pi-fw pi-align-right'
+          },
+          {
+            label: 'Center',
+            icon: 'pi pi-fw pi-align-center'
+          },
+          {
+            label: 'Justify',
+            icon: 'pi pi-fw pi-align-justify'
+          },
+
+        ]
+      },
+      {
+        label: '문서',
+        items: [
+          {
+            label: 'New',
+            icon: 'pi pi-fw pi-user-plus',
+          },
+          {
+            label: 'Delete',
+            icon: 'pi pi-fw pi-user-minus',
+
+          },
+          {
+            label: 'Search',
+            icon: 'pi pi-fw pi-users',
+            items: [
+              {
+                label: 'Filter',
+                icon: 'pi pi-fw pi-filter',
+                items: [
+                  {
+                    label: 'Print',
+                    icon: 'pi pi-fw pi-print'
+                  }
+                ]
+              },
+              {
+                icon: 'pi pi-fw pi-bars',
+                label: 'List'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        label: '설계변경',
+        items: [
+          {
+            label: 'Edit',
+            icon: 'pi pi-fw pi-pencil',
+            items: [
+              {
+                label: 'Save',
+                icon: 'pi pi-fw pi-calendar-plus'
+              },
+              {
+                label: 'Delete',
+                icon: 'pi pi-fw pi-calendar-minus'
+              }
+            ]
+          },
+          {
+            label: 'Archieve',
+            icon: 'pi pi-fw pi-calendar-times',
+            items: [
+              {
+                label: 'Remove',
+                icon: 'pi pi-fw pi-calendar-minus'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        label: '프로젝트',
+        command:()=>{
+          managementViewKey.editView(managementViewKey.currentKey,
+              {
+                page:'PMSGantt'
+              });
+
+          let tempCnt = cnt.value;
+
+          viewList.value[tempCnt]=viewResolveList['ProjectPMSGantt'];
+
+          dockItems.value[tempCnt+1]={
+            label: 'PMSGantt',
+            icon: "/_nuxt/assets/ice-34075.svg",
+            command: () => {
+              cnt.value=tempCnt;
+            },
+            key:tempCnt+1,
+            class:dockItems.value[tempCnt+1].class
+          }
+
+        }
+
+      }
+    ]
+);
+const bottomMenuBar = ref([]);
+
+const dockItems = ref([{
+    label: 'new',
+    icon: "/_nuxt/assets/clouds-7081496_1920.png",
+    command: () => {
+      let index =dockItems.value.length;
+      dockItems.value.push(defaultStartView(index,false));
+      managementViewKey.changeCurrentViewKey(managementViewKey.addViewKey(viewList.value.length));
+      viewList.value.push(viewResolveList['newStartView']);
+      cnt.value=managementViewKey.currentIndexKeyMap.get(managementViewKey.currentKey);
+    }
+    ,
+    key:0
+
+  },
+  defaultStartView(1,true)
+])
+
+const onDockItemClick=(event, item)=> {
+  if (item.command) {
+    item.command();
+    if(item.key>0){
+      console.log('prev :' +cnt.value )
+      console.log('to :' +(item.key-1==0?'0':item.key-1 ))
+      cnt.value=item.key-1;
+    }
+    for (let i = 0; i < dockItems.value.length; i++) {
+      let node = dockItems.value[i];
+      node.class=''
+    }
+    dockItems.value[cnt.value+1].class='p-dock-item-current';
+  }
+
+  event.preventDefault();
+}
+
+
+const dockFocus = ()=>{
+  if(switch1.value){
+
+  }
+}
+</script>
+
+<style  lang="scss">
+body{
+  margin: 2px 0 0 0;
+  overflow:hidden;
+}
+#topArea{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 4%;
+  li.p-focus>div.p-menuitem-content{
+    background-color: inherit;
+  }
+}
+#Container{
+  position: absolute;
+  width: 100%;
+  top: 4%;
+  height: 93%;
+
+}
+#Footer{
+  width: 100%;
+  position: absolute;
+  top: 97%;
+  height: 3%;
+
+}
+.p-treetable-tbody>tr{
+  height: 40px;
+
+}
+
+#Footer{
+  .p-dock {
+    z-index: 1000;
+  }
+
+}
+#topArea,#Footer {
+
+
+  .p-menubar {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+
+    .menubar-root {
+      font-weight: bold;
+      padding: 0 1rem;
+    }
+
+    .p-menuitem-link {
+      padding: 0.5rem .75rem;
+    }
+
+    .p-menubar-root-list > .p-menuitem > .p-menuitem-content > .p-menuitem-link {
+      padding: 0.5rem .75rem;
+
+      > .p-submenu-icon {
+        display: none;
+      }
+    }
+
+    .p-menubar-end {
+      span, i {
+        padding: 0 .75rem;
+      }
+    }
+
+    .p-submenu-list {
+      z-index: 2;
+    }
+  }
+
+  .p-button.preview {
+    background: linear-gradient(to left, var(--bluegray-700) 50%, var(--bluegray-800) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.5s ease-out;
+    color: #fff;
+    border-color: var(--bluegray-800);
+  }
+  .p-button.preview:hover {
+    background-position: left bottom;
+  }
+  .p-button.preview i {
+    background-color: var(--bluegray-800);
+  }
+  .p-button.preview:focus {
+    box-shadow: 0 0 0 1px var(--bluegray-500);
+  }
+}
+
+#mainDock{
+  li:has(a.selected){
+    transform: scale(1.5);
+  }
+}
+
+.p-tooltip {
+  z-index: 10000;
+}
+
+.p-orderlist-list{
+  min-height: 10rem;
+  height: calc(100% - 54px);
+}
+
+
+</style>

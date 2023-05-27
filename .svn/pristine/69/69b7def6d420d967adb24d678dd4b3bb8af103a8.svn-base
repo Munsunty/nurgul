@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ad103da-1f6b-4eae-8dca-3a6e2378ff19" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/bomResultArea" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/components/bomResultArea/bomAddList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composables/manage" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/composables/manage/manageCart.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/api/menu" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/server/api/menu/[...menuHandler].ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/api/permit" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/server/api/permit/[...permissionController].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.nuxt/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/dev/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/.nuxt/dev/index.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/dev/index.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/.nuxt/dev/index.mjs.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nuxt/types/nitro.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.nuxt/types/nitro.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/containorLayout1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/containorLayout1.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/partSearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/partSearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/partSearchLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/partSearchLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composables/mainViewDockerItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/composables/mainViewDockerItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/primevue.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/primevue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/[...hello].ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/pathController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/pathController.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/containorLayout1.vue" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2H1a0DwWoLK9HEBbbZwrOj9QtmE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/api" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.32938075" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="C:\CoreQ_Dev\IntelliJ IDEA 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main\server\api" />
+      <recent name="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main\assets" />
+      <recent name="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main\assets\background" />
+      <recent name="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main\assets" />
+      <recent name="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main\assets\logo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main" />
+          <option name="myCopyRoot" value="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main" />
+          <option name="myCopyRoot" value="C:\coreQfront\primeNuxt3\primevue-quickstart-nuxt3-main" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ad103da-1f6b-4eae-8dca-3a6e2378ff19" name="Default Changelist" comment="" />
+      <created>1667454821828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667454821828</updated>
+      <workItem from="1667454823960" duration="868000" />
+      <workItem from="1667456186870" duration="2385000" />
+      <workItem from="1667458770558" duration="4906000" />
+      <workItem from="1667528503800" duration="19809000" />
+      <workItem from="1667896474621" duration="855000" />
+      <workItem from="1667980419011" duration="3786000" />
+      <workItem from="1668059525422" duration="11000" />
+      <workItem from="1668059553138" duration="11577000" />
+      <workItem from="1668088977521" duration="164000" />
+      <workItem from="1668140556611" duration="17942000" />
+      <workItem from="1668263944147" duration="3195000" />
+      <workItem from="1668400160326" duration="13990000" />
+      <workItem from="1668485746539" duration="15921000" />
+      <workItem from="1668557224375" duration="28549000" />
+      <workItem from="1668643065955" duration="15793000" />
+      <workItem from="1668664501774" duration="13183000" />
+      <workItem from="1668729538166" duration="25609000" />
+    </task>
+    <task id="LOCAL-00001" summary="FrontEnd 작업환경&#10;&#10;Vue &#10;- Nuxt3 RC &#10;UI&#10;- PrimeVUE">
+      <created>1667458928957</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667458928958</updated>
+    </task>
+    <task id="LOCAL-00002" summary="화면 업데이트 &#10;1. 시작 화면 프로토 타입&#10;2. BOM 화면 개발중 [화면 연결 개발해야함.]">
+      <created>1668070804473</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668070804473</updated>
+    </task>
+    <task id="LOCAL-00003" summary="화면 업데이트 &#10;1. 시작 화면 프로토 타입&#10;2. BOM 화면 개발중 [화면 연결 개발해야함.]">
+      <created>1668070948977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668070948977</updated>
+    </task>
+    <task id="LOCAL-00004" summary="화면 업데이트 &#10;화면 SessionKey 관리">
+      <created>1668580343579</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668580343579</updated>
+    </task>
+    <task id="LOCAL-00005" summary="전체 대규모 업데이트&#10;1. NUXT 3  정식버전&#10;2. Prime Vue 버전 업">
+      <created>1668735246207</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668735246207</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="FrontEnd 작업환경&#10;&#10;Vue &#10;- Nuxt3 RC &#10;UI&#10;- PrimeVUE&#10;" />
+    <MESSAGE value="FrontEnd 작업환경&#10;&#10;Vue &#10;- Nuxt3 RC &#10;UI&#10;- PrimeVUE" />
+    <MESSAGE value="화면 업데이트 &#10;1. 시작 화면 프로토 타입&#10;2. BOM 화면 개발중 [화면 연결 개발해야함.]" />
+    <MESSAGE value="화면 업데이트 &#10;화면 SessionKey 관리" />
+    <MESSAGE value="전체 대규모 업데이트&#10;1. NUXT 3  정식버전&#10;2. Prime Vue 버전 업" />
+    <option name="LAST_COMMIT_MESSAGE" value="전체 대규모 업데이트&#10;1. NUXT 3  정식버전&#10;2. Prime Vue 버전 업" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
