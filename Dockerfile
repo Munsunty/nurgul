@@ -10,14 +10,14 @@ WORKDIR /app
 # copy the app, note .dockerignore
 COPY package.json .
 COPY package-lock.json .
-RUN yarn install
+# RUN yarn install
 
 FROM dependency-base AS production-base
 
 # build will also take care of building
 # if necessary
 COPY . .
-RUN yarn build
+# RUN yarn build
 
 FROM $NODE_VERSION-slim AS production
 
