@@ -2,7 +2,7 @@
   <div class="typing-effect speech-bubble col-12  shadow-2 p-3 " :class="scrollNum<15?'_fadeIn':'_fadeOut'">
     <ul  class="  col-12">
       <li v-for="(sentence, index) in typedText" :key="index" :class="{ active: index === currentIndex }">
-        <div class="text-900 font-bold text-2xl mb-2" style="font-family: 'Noto Sans CJK KR'; font-feature-settings:'kern' ">
+        <div class="text-900 font-bold text-2xl mb-2" >
           {{ typedText[index] }} </div>
       </li>
     </ul>
@@ -21,13 +21,13 @@ const reverse = ref(false);
 
 
 const sentences=ref(['개발 2년차',
-  '능수능란하게 일처리하는',
+  '능수능란한 일처리',
   '프로그램 신규 개발 설계부터',
   '실시간 서버 관리 ',
-  '개발이면 개발',
-  '아이디어면 아이디어',
-  '함께 일하고 싶은',
-  '사람이 되려고 노력해요.'
+  '#개발',
+  '#아이디어',
+  '#함께 일하기 좋은',
+  '#도전적인'
 ]);
 
 

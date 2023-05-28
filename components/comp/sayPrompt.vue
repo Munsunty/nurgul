@@ -2,7 +2,7 @@
   <div class="typing-effect flex speech-bubble col-12  shadow-2 p-3 " :class="scrollNum>=5&&scrollNum<9?'_fadeIn':'_fadeOut'" >
     <ul class="  col-12">
       <li v-for="(sentence, index) in typedText" :key="index" :class="{ active: index === currentIndex }" >
-        <div class="text-900 font-bold text-2xl mb-2" style="font-family: 'Noto Sans CJK KR'; font-feature-settings:'kern' " >
+        <div class="text-900 font-bold text-2xl mb-2"  >
           {{ typedText[index] }} </div>
       </li>
     </ul>
@@ -44,7 +44,7 @@ const sentences=ref(['제 소개를 할게요.',
   '왼쪽은 제 사진이에요.',
   '저 닮았나요?'
 ]);
-const replaceSentence=ref('31세 남자');
+const replaceSentence=ref('31세 남자, 기혼');
 
 
 onMounted(() => {

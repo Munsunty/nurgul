@@ -2,7 +2,7 @@
   <div class="typing-effect speech-bubble col-12  shadow-2 p-3 " >
     <ul  class=" col-12">
       <li v-for="(sentence, index) in typedText" :key="index" :class="{ active: index === currentIndex }">
-        <div class="text-900 font-bold text-3xl mb-2" style="font-family: 'Noto Sans CJK KR'; font-feature-settings:'kern' ">
+        <div class="text-900 font-bold text-3xl mb-2" >
           {{ typedText[index] }} </div>
       </li>
     </ul>
@@ -20,13 +20,13 @@ const typedText=ref([]);
 const currentIndex = ref(0);
 const index = ref(0);
 const sentences=ref(
-  ['개발자 Nurgul이',
-  '참여한 프로젝트에요. ',
-  '프로젝트관리 프로그램',
-  'Chart 대쉬보드',
-  '서버 관리 모듈',
+  ['백엔드 담당개발',
+  'Framework 설계, 구현',
+  'PMS 프로그램 제작',
+  '데이터 기반 개발',
+  '서버 관리 모듈 개발',
   'Rest API 개발',
-  'ETC..'
+  'DB 설계, 튜닝'
 ]);
 
 
