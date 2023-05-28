@@ -14,6 +14,7 @@
     </div>
 
   <div id="temp1" v-show="scrollNum<=4"   :class="scrollNum<=3?'_fadeIn':'_fadeOut'">
+    <!-- <div id="temp1" > -->
     <p>1. 전체화면으로 화면을 설정해주세요. </p>
     <p>2. 아래로 스크롤 해주세요. </p>
     <!-- {{ scrollNum }} -->
@@ -27,7 +28,7 @@
   const isScroll = ref(false);
   const scrollTarget = ref(null);
   const scrollParentTarget = ref(null);
-  const scene_count = ref([25,50,65,100]);
+  const scene_count = ref([25,60,75,100]);
   const autoTF = ref(false);
   
 
@@ -213,7 +214,14 @@ div#temp1{
   
 }
 
+.p-accordion-content{
+  border: none !important;
+  padding: 0 !important;
+}
+.p-accordion-header {
+  border: none !important;
 
+}
 
 
 </style>

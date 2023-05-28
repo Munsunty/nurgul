@@ -1,5 +1,5 @@
 <template>
-  <div id="_scene3" class="grid col-12" :class="scrollNum>52&&scrollNum<64?'_fadeIn':'_fadeOut'">
+  <div id="_scene3" class="grid col-12" :class="scrollNum>startNumber&&scrollNum<endNumber?'_fadeIn':'_fadeOut'">
     <div  class="col-5 flex align-items-center justify-content-center">
       <img id="__nurgul3" src="~/assets/nurgul.png" width="250">
     </div>
@@ -11,10 +11,10 @@
     <div class="col-5 flex align-items-center justify-content-center">
       <img id="__seshat3" src="~/assets/seshat.png" alt="Image" width="230">
     </div>
-    <div style="position: absolute; float: left; top: 7%;"  :class="scrollNum>52&&scrollNum<64?'_fadeIn':'_fadeOut'"
+    <div style="position: absolute; float: left; top: 7%;"  :class="scrollNum>startNumber&&scrollNum<endNumber?'_fadeIn':'_fadeOut'"
       class="col-12 flex align-items-center justify-content-center text-900 font-bold text-2xl">
-      <span :class="scrollNum>52&&scrollNum<=55?'_fadeIn':'_fadeOut'">“서로 돕고 의지하면 더 큰 일을 이룰 수 있다.” - 마틴 루터 킹 주니어</span>
-      <span :class="scrollNum>55&&scrollNum<64?'_fadeIn':'_fadeOut'">“우리는 함께, 높게, 멀리 갈 수 있어.” -  개발자 Nurgul</span>
+      <span :class="scrollNum>startNumber&&scrollNum<=startNumber+6?'_fadeIn':'_fadeOut'">“서로 돕고 의지하면 더 큰 일을 이룰 수 있다.” - 마틴 루터 킹 주니어</span>
+      <span :class="scrollNum>startNumber+6&&scrollNum<endNumber?'_fadeIn':'_fadeOut'">“우리는 함께, 높게, 멀리 갈 수 있어.” -  개발자 Nurgul</span>
 
     </div>
   </div>
@@ -31,8 +31,10 @@
 
 <script setup>
 const props = defineProps(['scrollNum']);
-const startNumber=ref(52);
-const self_step = ref(52);
+const startNumber=ref(61);
+const endNumber=ref(74);
+
+const self_step = ref(60);
 
 
 

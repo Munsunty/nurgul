@@ -15,7 +15,8 @@ import Steps from 'primevue/steps'
 import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
 import Panel from 'primevue/panel';
-
+import Accordion from 'primevue/accordion';
+import AccordionTab from 'primevue/accordiontab';
 
 
 export default defineNuxtPlugin(nuxtApp => {
@@ -33,6 +34,9 @@ export default defineNuxtPlugin(nuxtApp => {
     nuxtApp.vueApp.component('TabPanel', TabPanel)
     nuxtApp.vueApp.component('TabView', TabView)
     nuxtApp.vueApp.component('Panel', Panel)
+    nuxtApp.vueApp.component('Accordion', Accordion)
+    nuxtApp.vueApp.component('AccordionTab', AccordionTab)
+    
 
     
     

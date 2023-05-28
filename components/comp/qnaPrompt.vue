@@ -2,7 +2,7 @@
   <div class="typing-effect ">
     <ul :class="scrollNum>startNum+1&&scrollNum<endNum?'_fadeIn':'_fadeOut'">
       <li >
-        <div class="text-900 font-bold text-3xl mb-2" style="font-family: 'Noto Sans CJK KR'; font-feature-settings:'kern' ">
+        <div class="text-900 font-bold text-3xl mb-2">
           {{ sentences }} </div>
       </li>
       <!-- <li v-for="(sentence, index) in typedText" :key="index" :class="{ active: index === currentIndex }">

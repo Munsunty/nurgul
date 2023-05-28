@@ -2,7 +2,7 @@
   <div class="typing-effect">
     <ul>
       <li v-for="(sentence, index) in typedText" :key="index" :class="{ active: index === currentIndex }">
-        <div class="text-900 font-bold text-2xl mb-1" style="font-family: 'Noto Sans CJK KR'; font-feature-settings:'kern' ">
+        <div >
           {{ typedText[index] }} </div>
       </li>
     </ul>
@@ -18,8 +18,8 @@ const props = defineProps(['scrollNum','startNum','endNum']);
 const typedText=ref([]);
 const currentIndex = ref(0);
 const index = ref(0);
-const sentences=ref(['프로그램 프로세스 검증,',
- 'Rest API 개발, 영향도 평가, 테스트 케이스 작성 등',
+const sentences=ref(['프로그램 설계-구현, 데이터 모델 설계-구현 ',
+ 'Rest API 개발, DB 개발, 프로그램 영향도 평가,테스트 케이스 작성 등',
 '프로그램 개발 및 유지보수 전반에 필요한 업무를 수행할 수 있어요.',
 ' ',
 '여러 회사들과 프로젝트를 하며 개발자, 비개발자 분들과',

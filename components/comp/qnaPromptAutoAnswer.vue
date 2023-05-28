@@ -1,6 +1,6 @@
 <template>
-  <div class="typing-effect">
-    <ul >
+  <div class="typing-effect2">
+    <ul>
       <li v-for="(sentence, index) in typedText" :key="index" :class="{ active: index === currentIndex }">
         <div >
           {{ typedText[index] }} </div>
@@ -9,34 +9,22 @@
   </div>
 
 </template>
-<!--  27~ 29 -->
-<script setup>
 
+<script setup>
 import { onMounted } from 'vue';
-const props = defineProps(['scrollNum','startNum','endNum']);
+const props = defineProps(['scrollNum','content']);
 
 const typedText=ref([]);
 const currentIndex = ref(0);
 const index = ref(0);
-const sentences=ref([
-  '밤 늦게까지 프로그램 개발을 하고',
-  '잠에 들 때면 너구리 같구나 라는 느낌을 받았어요.',
-  '* 너구리 닮음'
-]);
+const sentences=ref(props.content);
 
-
-
+  
 onMounted(() => {
-  startType();
+  typeSentences();
   
 })
-const startType=()=>{
-  if(props.scrollNum>props.startNum+1&& props.scrollNum<props.endNum){
-    typeSentences();
-    return;
-  }
-  setTimeout(startType,500);
-}
+
 
 const typeSentences = () => {
   const currentSentence = sentences.value[currentIndex.value];
@@ -45,7 +33,8 @@ const typeSentences = () => {
   if(index.value>currentSentence.length){
     index.value=0;
     currentIndex.value++;
-    if(currentIndex.value==3){
+    let leng = props.content.length;
+    if(currentIndex.value==leng){
       return ;
     }
   }
@@ -59,11 +48,25 @@ const typeSentences = () => {
 </script>
 
 <style scoped>
+div.typing-effect2 li{
+  overflow: hidden; /* 텍스트 오버플로우 숨김 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  margin: 0 auto; /* 가운데 정렬을 위한 마진 설정 */
+  font-family: monospace; /* 모노스페이스 글꼴 설정 (옵션) */
+  padding-bottom: 5px; /* 리스트 아이템 사이 간격 설정 (옵션) */
+}
+div.typing-effect2 ul{
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+
+}
 
 .typing-effect li.active {
   /* 활성화된 문장 스타일링 (옵션) */
   font-weight: bold;
   color: blue;
 }
+
+
 
 </style>

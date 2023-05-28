@@ -1,5 +1,5 @@
 <template>
-    <div  :class="scrollNum<=50?'_fadeIn':'_fadeOut'" style="z-index: 10;">
+    <div  :class="scrollNum<=59?'_fadeIn':'_fadeOut'" style="z-index: 10;">
         <img id="__ipad"  src="~/assets/IPad_Pro_12.9_3rd_gen_mockup.png"   >
         <img id="__noteing" src="~/assets/seshat.png" alt="Image"  :class="scrollNum<=startNumber+5?'_fadeIn':'_fadeOut'">
     </div>

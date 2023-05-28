@@ -1,12 +1,12 @@
 <template>
   <div id="_scene2" class="grid col-12">
-    <div  class="col-4 flex align-items-center justify-content-center">
-      <div class="col-5 p-2 gap-4 h-5rd " :class="scrollNum>30?'_fadeIn':'_fadeOut'">
+    <div  class="col-4 flex align-items-center justify-content-center h-full">
+      <div class="col-5 p-2 gap-4 h-5rd " :class="scrollNum>30&&scrollNum<startNumbers[4]-1?'_fadeIn':'_fadeOut'">
         <CompMainImage></CompMainImage>
       </div>
     </div>
-    <div style=" flex-direction: column;"  class="col-8 flex h-8rd align-items-center justify-content-center p-5" >
-      <Panel id="__panel" :class="scrollNum>31?'_fadeIn':'_fadeOut'" >
+    <div  class="col-8 p-5 h-full" >
+      <Panel id="__panel" :class="scrollNum>31&&scrollNum<startNumbers[4]-1?'_fadeIn':'_fadeOut'" >
         <template #header >
           <div  class="col-12 h-full flex align-items-center justify-content-center">
             <component :is="s2_rightTop_Area" :scrollNum="scrollNum" :startNum="startNumbers[scene_number]" :endNum="startNumbers[scene_number+1]" fromPage="CompQnaPrompt"  />
@@ -18,7 +18,7 @@
           <component :is="s2_rightBottom_Area" :scrollNum="scrollNum" :startNum="startNumbers[scene_number]" :endNum="startNumbers[scene_number+1]" fromPage="CompQnaPromptAnswer" style="width:100%; height: 100%;" />
 
         </div>
-    </Panel>
+      </Panel>
       
      
     </div>
@@ -36,7 +36,7 @@ Q&A 질의 응답
 <script setup>
 
 const props = defineProps(['scrollNum']);
-const startNumbers= ref([31,35,40,45,50]);
+const startNumbers= ref([31,35,40,45,60]);
 const scene_number = ref(0);
 const scene_chanage = ref(false);
 
@@ -113,6 +113,7 @@ div#_scene2{
 
 
   } 
+
 
 }
 </style>
