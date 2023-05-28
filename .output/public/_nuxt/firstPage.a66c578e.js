@@ -1,1 +1,0 @@
-import t from"./selfIntro.87cb4b04.js";import _ from"./selfy.7dea5b4f.js";import{a as c,o as r,l as m,f as o,F as a}from"./entry.cee4e10b.js";const s={};function f(p,l){const e=t,n=_;return r(),m(a,null,[o(e),o(n)],64)}const d=c(s,[["render",f]]);export{d as default};

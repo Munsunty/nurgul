@@ -1,1 +1,0 @@
-import{a as r,r as o,b as n,s as l}from"./entry.cee4e10b.js";const p={__name:"wcBoard",props:["scrollNum"],setup(t){const s=t,_=o(s.scrollNum);return o([20,40,83,30]),n(()=>{}),l(()=>s.scrollNum,(e,a)=>{let c=_.value;e!=c&&(_.value=e)}),(e,a)=>null}},d=r(p,[["__scopeId","data-v-3b48ad50"]]);export{d as default};

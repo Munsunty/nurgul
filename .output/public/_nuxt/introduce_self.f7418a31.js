@@ -1,1 +1,0 @@
-import{a as t,o as n,l as c,h as e}from"./entry.cee4e10b.js";const l={},o={style:{"background-color":"darkorange"},class:"typing-effect col-8 flex align-items-center justify-content-center"},s=e("ul",null,[e("li",null,"안녕하세요."),e("li",null,"개발자 Nurgul"),e("li",null,"입니다.")],-1),r=[s];function a(i,_){return n(),c("div",o,r)}const d=t(l,[["render",a]]);export{d as default};
