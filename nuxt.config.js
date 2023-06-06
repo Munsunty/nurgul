@@ -1,4 +1,9 @@
 export default defineNuxtConfig({
+	app:{
+		head: {
+			title: 'Nurgul Resume'
+		  }
+	},
 	css: [
 		'primevue/resources/themes/saga-blue/theme.css',
 		'primevue/resources/primevue.css',
